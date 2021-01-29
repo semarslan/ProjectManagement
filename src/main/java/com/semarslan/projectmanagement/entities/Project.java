@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -14,6 +15,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,16 +44,14 @@ public class Project {
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date updated_at;
 
-    @PrePersist //Entity kayıt edilmeden önce çalıştırılacak metodu ifade eder.
+    @PrePersist
     protected void onCreate(){
         this.created_at = new Date();
     }
 
-    @PreUpdate //Entity güncellenmeden önce çalıştırılacak metodu ifade eder.
+    @PreUpdate
     protected void onUpdate(){
         this.updated_at = new Date();
     }
 }
 
-
-//jdbc:h2:mem:testdb
