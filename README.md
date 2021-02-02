@@ -24,7 +24,7 @@ Elimizde yürütülen projeleri (Proje) ve bu projelerde çalışanları(Calisan
 Bunun aksine Proje entitysini yüklediğimizde Calisan entitysinin yüklenmesini istemiyorsak yani ihtiyaç olması halinde Calisan entitysini yüklemek istiyorsak FetchType tipini fetch=FetchType.LAZY olarak belirleriz. 
 
 
-# Peki geliştireceğimiz uygulama içerisinde bu tiplerinin kullanımını nasıl belirlemeliyiz ?
+### Peki geliştireceğimiz uygulama içerisinde bu tiplerinin kullanımını nasıl belirlemeliyiz ?
 
 Eğer @OneToOne veya @ManyToOne tipinde ilişki bulunan veritabanınlarından yararlanıyorsak FetchType olarak EAGER(Ön Yükleme) kullanmak daha doğrudur. Yani ilişkili entity bir tane olduğundan ön yükleme yapmak performans açısından bir sorun oluşturmaz.
 
