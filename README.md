@@ -31,3 +31,15 @@ Bunun aksine Proje entitysini yüklediğimizde Calisan entitysinin yüklenmesini
 Eğer @OneToOne veya @ManyToOne tipinde ilişki bulunan veritabanınlarından yararlanıyorsak FetchType olarak EAGER(Ön Yükleme) kullanmak daha doğrudur. Yani ilişkili entity bir tane olduğundan ön yükleme yapmak performans açısından bir sorun oluşturmaz.
 
 Eğer ki  @OneToMany veya  @ManyToMany kullanıyorsak da FetchType olarak LAZY(Tembel Yükleme) kullanmak daha doğrudur. Çünkü ilişkili entityler çok sayıda olması halinde ön yükleme yapacak olursak bu durum performans kaybına neden olur. Bunun için ihtiyaç olması halinde yüklemek daha doğru bir çözüm olur.
+
+-----------------------------
+
+## Cascade 
+
+Cascade, bir JPA standardıdır. Entity sınıflarımızdaki ilişkilerin hareketlerini yani davranışlarını cascade tipleri ile ayarlarız.
+
+* Persist	Nesne persist edilirse ilişkili nesnelerde persist edilir
+* All	Tüm işlemleri ilişkili nesnelerle birlikte yapar
+* Merge	Nesne merge edilirse ilişkili nesnelerde merge edilir
+* Remove	Nesne remove edilirse ilişkili nesnelerde remove edilir
+* Refresh	Nesne refresh edilirse ilişkili nesnelerde refresh edilir
