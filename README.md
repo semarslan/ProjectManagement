@@ -9,3 +9,5 @@ Not finished yet.
 @PrePersist : Entity kayıt edilmeden önce çalıştırılacak metodu ifade eder.
 
 @PreUpdate : Entity güncellenmeden önce çalıştırılacak metodu ifade eder.
+
+@JsonIgnore : JSON verisinde görünmesi istenmeyen fieldlar özel olarak belirtmek istenirse kullanılır.
