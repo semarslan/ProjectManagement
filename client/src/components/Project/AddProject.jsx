@@ -6,8 +6,8 @@ import classnames from "classnames";
 
 class AddProject extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             projectName: "",
@@ -125,7 +125,6 @@ class AddProject extends Component {
                                     </div>
                                     <h6>Estimated End Date</h6>
                                     <div className="form-group">
-
                                         <input
                                             type="date"
                                             className="form-control form-control-lg"
