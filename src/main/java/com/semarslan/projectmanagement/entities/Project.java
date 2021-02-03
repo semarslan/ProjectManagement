@@ -1,6 +1,7 @@
 package com.semarslan.projectmanagement.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -39,10 +40,15 @@ public class Project {
     private Date endDate;
 
     @JsonFormat(pattern = "yyyy-mm-dd")
+    @Column(updatable = false)
     private Date created_at;
 
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date updated_at;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "project")
+    @JsonIgnore
+    private Backlog backlog;
 
     @PrePersist
     protected void onCreate(){
