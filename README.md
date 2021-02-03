@@ -30,8 +30,6 @@ Eğer Backlog entitysini yüklediğimizde ProjectTask entitysinin yüklenmesini 
 
 Eğer @OneToOne veya @ManyToOne tipinde ilişki bulunan veritabanınlarından yararlanıyorsak FetchType olarak EAGER(Ön Yükleme) kullanmak daha doğrudur. Yani ilişkili entity bir tane olduğundan ön yükleme yapmak performans açısından bir sorun oluşturmaz.
 
-Eğer ki  @OneToMany veya  @ManyToMany kullanıyorsak da FetchType olarak LAZY kullanmak daha doğrudur. Çünkü ilişkili entityler çok sayıda olması halinde ön yükleme yapacak olursak bu durum performans kaybına neden olur. Bunun için ihtiyaç olması halinde yüklemek daha doğru bir çözüm.
-
 -----------------------------
 
 ## Cascade 
@@ -43,3 +41,10 @@ Cascade, bir JPA standardıdır. Entity sınıflarımızdaki ilişkilerin hareke
 * Merge	Nesne merge edilirse ilişkili nesnelerde merge edilir
 * Remove	Nesne remove edilirse ilişkili nesnelerde remove edilir
 * Refresh	Nesne refresh edilirse ilişkili nesnelerde refresh edilir
+
+Eğer ki  @OneToMany veya  @ManyToMany kullanıyorsak da FetchType olarak LAZY kullanmak daha doğrudur. Çünkü ilişkili entityler çok sayıda olması halinde ön yükleme yapacak olursak bu durum performans kaybına neden olur. Bunun için ihtiyaç olması halinde yüklemek daha doğru bir çözüm.
+
+---------------
+
+* Eğer cascade={"remove"} veya orphanRemoval=true özelliğinin ayarlı olduğu entityden bir kayıt silerseniz, bu işlem diğer ilişkisel entitylerden de otomatik olarak kayıtları silmeyi deneyecektir.
+
