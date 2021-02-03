@@ -9,4 +9,9 @@ public interface ProjectTaskService {
 
     Iterable<ProjectTask> findBacklogById(String backlogId);
 
+    ProjectTask findProjectTaskByProjectSequence(String backlogId, String projectTaskId);
+
+    ProjectTask updateByProjectSequence(ProjectTask updatedTask, String backlogId, String projectTaskId);
+
+    void deleteProjectTaskByProjectSequence(String backlogId, String projectTaskId);
 }
