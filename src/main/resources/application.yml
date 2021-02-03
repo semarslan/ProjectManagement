@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/projectManagement
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 100
+  jpa:
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+    database: postgresql
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
