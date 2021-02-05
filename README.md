@@ -55,4 +55,4 @@ Eğer ki  @OneToMany veya  @ManyToMany kullanıyorsak da FetchType olarak LAZY k
 
 Bu iki metot birbirine benzese de patch birden fazla kısımdan oluşan bir kaynağın bir parçasını dönerken tercih edilmelidir. 
 Put ise kaynağın tamamını dönülecekse tercih edilmelidir. 
-* Üstelik put metodu yapısı gereği hantaldır, küçük update işlemlerinde patch daha verimli çalışacaktır.
+* Put metodu yapısı gereği hantaldır, küçük update işlemlerinde patch daha verimli çalışacaktır.
