@@ -4,8 +4,6 @@ import ProjectTask from "./ProjectTasks/ProjectTask";
 class Backlog extends Component {
     render() {
         const {projectTasksProp} = this.props;
-
-        console.log(this.props)
         const tasks = projectTasksProp.map(projectTask => (
             <ProjectTask key={projectTask.id} projectTask={projectTask}/>
         ))
@@ -14,8 +12,16 @@ class Backlog extends Component {
         let inProgressItems = [];
         let doneItems = [];
 
-        for (let i=0; i<tasks.length; i++) {
-            console.log(tasks[i]);
+        for (let i = 0; i < tasks.length; i++) {
+            if (tasks[i].props.projectTask.status === "TO_DO") {
+                todoItems.push(tasks[i])
+            }
+            if (tasks[i].props.projectTask.status === "IN_PROGRESS") {
+                inProgressItems.push(tasks[i])
+            }
+            if (tasks[i].props.projectTask.status === "DONE") {
+                doneItems.push(tasks[i])
+            }
         }
         return (
             <div>
@@ -28,7 +34,7 @@ class Backlog extends Component {
                                     <h3>TO DO</h3>
                                 </div>
                             </div>
-                            {tasks}
+                            {todoItems}
                         </div>
                         <div className="col-md-4">
                             <div className="card text-center mb-2">
@@ -36,6 +42,7 @@ class Backlog extends Component {
                                     <h3>In Progress</h3>
                                 </div>
                             </div>
+                            {inProgressItems}
                         </div>
                         <div className="col-md-4">
                             <div className="card text-center mb-2">
@@ -43,6 +50,7 @@ class Backlog extends Component {
                                     <h3>Done</h3>
                                 </div>
                             </div>
+                            {doneItems}
                         </div>
                     </div>
                 </div>

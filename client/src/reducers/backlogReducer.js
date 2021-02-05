@@ -5,8 +5,8 @@ const initialState = {
     projectTask: {}
 }
 
-export default function (state=initialState, action) {
-    switch (action.typeAnnotation) {
+export default function (state = initialState, action) {
+    switch (action.type) {
 
         case GET_BACKLOG:
             return {
@@ -22,9 +22,8 @@ export default function (state=initialState, action) {
 
         case DELETE_PROJECT_TASK:
             return {
-                ...state
-
-                // TO_DO
+                ...state,
+                projectTasks: state.projectTasks.filter(projectTask => projectTask.projectSequence !== action.payload)
             }
         default:
             return state;
