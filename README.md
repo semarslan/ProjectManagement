@@ -15,13 +15,13 @@ Not finished yet.
 
 ------------------ 
 
-## FetchType : 
+## FetchType  
 
 Aralarında ilişki bulunan entitylerden bir tarafı yüklerken diğer tarafın yüklenme stratejisini belirlememize olanak sağlar.
 
 Hibernate içerisinde EAGER ve LAZY şeklinde 2 tip entity yükleme stratejisi vardır. Bu tipleri örnekle açıklayacak olursak;
 
-Elimizde proje Backlog ve bu projelerin Task'larını tuttuğumuz iki entity var. Backlog ve ProjectTask arasında bir ilişki bulunduğundan veritabanında, Backlog entitysini yüklediğimizde ilişkili olduğu ProjectTask tablosununda yüklenmesini istiyorsak FetchType tipini fetch=FetchType.EAGER olarak belirledik.
+Elimizde proje Backlog ve bu projelerin Task'larını tuttuğumuz iki entity var. Backlog ve ProjectTask arasında bir ilişki bulunduğundan veritabanında, Backlog entitysini yüklediğimizde ilişkili olduğu ProjectTask tablosununda yüklenmesini istiyoruz ve bu nedenle FetchType tipini fetch=FetchType.EAGER olarak belirledik.
 
 Eğer Backlog entitysini yüklediğimizde ProjectTask entitysinin yüklenmesini istemeseydik, yani ihtiyaç olması halinde ProjectTask entitysini yükleseydik FetchType tipini fetch=FetchType.LAZY olarak belirlerdik. 
 
@@ -36,11 +36,11 @@ Eğer @OneToOne veya @ManyToOne tipinde ilişki bulunan veritabanınlarından ya
 
 Cascade, bir JPA standardıdır. Entity sınıflarımızdaki ilişkilerin hareketlerini yani davranışlarını cascade tipleri ile ayarlarız.
 
-* Persist	Nesne persist edilirse ilişkili nesnelerde persist edilir
-* All	Tüm işlemleri ilişkili nesnelerle birlikte yapar
-* Merge	Nesne merge edilirse ilişkili nesnelerde merge edilir
-* Remove	Nesne remove edilirse ilişkili nesnelerde remove edilir
-* Refresh	Nesne refresh edilirse ilişkili nesnelerde refresh edilir
+* Persist- Nesne persist edilirse ilişkili nesnelerde persist edilir
+* All	Tüm- işlemleri ilişkili nesnelerle birlikte yapar
+* Merge-	Nesne merge edilirse ilişkili nesnelerde merge edilir
+* Remove-	Nesne remove edilirse ilişkili nesnelerde remove edilir
+* Refresh-	Nesne refresh edilirse ilişkili nesnelerde refresh edilir
 
 Eğer ki  @OneToMany veya  @ManyToMany kullanıyorsak da FetchType olarak LAZY kullanmak daha doğrudur. Çünkü ilişkili entityler çok sayıda olması halinde ön yükleme yapacak olursak bu durum performans kaybına neden olur. Bunun için ihtiyaç olması halinde yüklemek daha doğru bir çözüm.
 
