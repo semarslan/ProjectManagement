@@ -1,8 +1,9 @@
 # ProjectManagement
 
 
-Not finished yet.
+# Not finished yet.
 
+------------------
 
 @ControllerAdvice : Spring MVC uygulamalarında küresel hata işleme için kullanılır. Ayrıca response'un body ve http status kodu üzerinde tam denetime sahiptir.
 
@@ -48,3 +49,10 @@ Eğer ki  @OneToMany veya  @ManyToMany kullanıyorsak da FetchType olarak LAZY k
 
 * Eğer cascade={"remove"} veya orphanRemoval=true özelliğinin ayarlı olduğu entityden bir kayıt silerseniz, bu işlem diğer ilişkisel entitylerden de otomatik olarak kayıtları silmeyi deneyecektir.
 
+--------------
+
+## Put vs Patch 
+
+Bu iki metot birbirine benzese de patch birden fazla kısımdan oluşan bir kaynağın bir parçasını dönerken tercih edilmelidir. 
+Put ise kaynağın tamamını dönülecekse tercih edilmelidir. 
+*Üstelik put metodu yapısı gereği hantaldır, küçük update işlemlerinde patch daha verimli çalışacaktır.
