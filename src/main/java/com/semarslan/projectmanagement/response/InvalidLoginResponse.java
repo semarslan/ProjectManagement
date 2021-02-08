@@ -1,4 +1,4 @@
-package com.semarslan.projectmanagement.exceptions;
+package com.semarslan.projectmanagement.response;
 
 import lombok.Getter;
 import lombok.Setter;
