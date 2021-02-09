@@ -40,11 +40,12 @@ public class ProjectTaskServiceImpl implements ProjectTaskService {
             projectTask.setProjectSequence(projectIdentifier + "-" + BacklogSequence);
             projectTask.setProjectIdentifier(projectIdentifier);
 
-            if (projectTask.getPriority() == null) projectTask.setPriority(3);
+            if (projectTask.getPriority() == 0 || projectTask.getPriority() == null)
+                projectTask.setPriority(3);
 
-            if (projectTask.getStatus() == "" || projectTask.getStatus() == null) {
+            if (projectTask.getStatus() == "" || projectTask.getStatus() == null)
                 projectTask.setStatus("TO_DO");
-            }
+
 
             return projectTaskRepository.save(projectTask);
         } catch (Exception e) {
@@ -82,7 +83,7 @@ public class ProjectTaskServiceImpl implements ProjectTaskService {
         return projectTask;
     }
 
-    public  ProjectTask updateByProjectSequence(ProjectTask updatedTask, String backlogId, String projectTaskId){
+    public ProjectTask updateByProjectSequence(ProjectTask updatedTask, String backlogId, String projectTaskId) {
         ProjectTask projectTask = findProjectTaskByProjectSequence(backlogId, projectTaskId);
 
         projectTask = updatedTask;
@@ -90,7 +91,7 @@ public class ProjectTaskServiceImpl implements ProjectTaskService {
         return projectTaskRepository.save(projectTask);
     }
 
-    public void deleteProjectTaskByProjectSequence(String backlogId, String projectTaskId){
+    public void deleteProjectTaskByProjectSequence(String backlogId, String projectTaskId) {
         ProjectTask projectTask = findProjectTaskByProjectSequence(backlogId, projectTaskId);
 
         projectTaskRepository.delete(projectTask);
