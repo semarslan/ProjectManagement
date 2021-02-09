@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface ProjectRepository extends JpaRepository<Project, Long> {
 
     Project findByProjectIdentifier(String projectId);
+    Iterable<Project> findAllByProjectLeader(String username);
 
 }

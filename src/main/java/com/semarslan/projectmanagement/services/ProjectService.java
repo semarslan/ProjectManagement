@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface ProjectService {
 
-    Project saveOrUpdateProject(Project project);
+    Project saveOrUpdateProject(Project project, String username);
 
-    Project findProjectByIdentifier(String projectId);
+    Project findProjectByIdentifier(String projectId, String username);
 
-    List<Project> getAll();
+    Iterable<Project> getAll(String username);
 
-    void delete(String projectId);
+    void delete(String projectId, String username);
 }
