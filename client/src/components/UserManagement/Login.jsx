@@ -20,6 +20,11 @@ class Login extends Component {
         if(nextProps.security.validToken) {
             this.props.history.push("/dashboard");
         }
+        return null;
+    }
+
+    componentDidMount() {
+
     }
 
     onSubmit(e) {
@@ -83,4 +88,4 @@ const mapStateToProps = state => ({
     security: state.security,
     errors: state.errors
 })
-export default connect(null, {login})(Login);
+export default connect(mapStateToProps, {login})(Login);

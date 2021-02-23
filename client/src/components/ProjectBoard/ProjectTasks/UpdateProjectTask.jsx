@@ -34,6 +34,7 @@ class UpdateProjectTask extends Component {
 
     }
 
+
     componentWillReceiveProps(nextProps, nextContext) {
 
         if (nextProps.errors) {
