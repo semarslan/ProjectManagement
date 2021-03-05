@@ -7,20 +7,24 @@ import {Link} from "react-router-dom";
 
 class UpdateProjectTask extends Component {
 
+    emptyItem = {
+        id: "",
+        projectSequence: "",
+        summary: "",
+        acceptanceCriteria: "",
+        status: "",
+        priority: "",
+        dueDate: "",
+        createdAt: "",
+        projectIdentifier: "",
+    }
     constructor(props) {
         super(props);
 
         this.state = {
-            id: "",
-            projectSequence: "",
-            summary: "",
-            acceptanceCriteria: "",
-            status: "",
-            priority: "",
-            dueDate: "",
-            createdAt: "",
-            projectIdentifier: "",
-            errors: {}
+            item: this.emptyItem,
+            errors: {},
+            isCreate: false
         };
 
         this.onChange = this.onChange.bind(this);

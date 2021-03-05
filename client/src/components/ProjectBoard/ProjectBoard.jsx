@@ -20,7 +20,7 @@ class ProjectBoard extends Component {
         this.props.getBacklog(id)
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         if (nextProps.errors) {
             this.setState({errors: nextProps.errors});
         }
