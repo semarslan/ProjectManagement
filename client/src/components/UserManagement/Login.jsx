@@ -5,8 +5,8 @@ import {login} from "../../actions/securityActions";
 import classnames from "classnames";
 
 class Login extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             username: "",
             password: "",
@@ -21,7 +21,6 @@ class Login extends Component {
             this.props.history.push("/dashboard");
         }
     }
-
 
     componentWillReceiveProps(nextProps, prevProps) {
         if (nextProps.security.validToken) {
