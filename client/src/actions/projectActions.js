@@ -21,7 +21,7 @@ export const createProject = (project, history) => async dispatch => {
 }
 
 export const getProjects = () => async dispatch => {
-    const res = await axios.get("/api/project");
+    const res = await axios.get("/api/project/all");
     dispatch({
         type: GET_PROJECTS,
         payload: res.data
@@ -35,10 +35,10 @@ export const getProject = (id, history) => async dispatch => {
             type: GET_PROJECT,
             payload: res.data
         });
-    } catch (err) {
+    } catch (error) {
         history.push("/dashboard");
     }
-}
+};
 
 export const deleteProject = id => async dispatch => {
     if (

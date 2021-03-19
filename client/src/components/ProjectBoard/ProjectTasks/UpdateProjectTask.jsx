@@ -7,20 +7,24 @@ import {Link} from "react-router-dom";
 
 class UpdateProjectTask extends Component {
 
+    emptyItem = {
+        id: "",
+        projectSequence: "",
+        summary: "",
+        acceptanceCriteria: "",
+        status: "",
+        priority: "",
+        dueDate: "",
+        createdAt: "",
+        projectIdentifier: "",
+    }
     constructor(props) {
         super(props);
 
         this.state = {
-            id: "",
-            projectSequence: "",
-            summary: "",
-            acceptanceCriteria: "",
-            status: "",
-            priority: "",
-            dueDate: "",
-            createdAt: "",
-            projectIdentifier: "",
-            errors: {}
+            item: this.emptyItem,
+            errors: {},
+            isCreate: false
         };
 
         this.onChange = this.onChange.bind(this);
@@ -33,6 +37,7 @@ class UpdateProjectTask extends Component {
         this.props.getProjectTask(backlogId, projectTaskId, this.props.history);
 
     }
+
 
     componentWillReceiveProps(nextProps, nextContext) {
 
@@ -66,10 +71,9 @@ class UpdateProjectTask extends Component {
         })
     }
 
-    onChange(e) {
+    onChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
     }
-
 
     onSubmit(e) {
         e.preventDefault();

@@ -9,6 +9,7 @@ class ProjectBoard extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
             errors: {}
         }
@@ -19,7 +20,7 @@ class ProjectBoard extends Component {
         this.props.getBacklog(id)
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         if (nextProps.errors) {
             this.setState({errors: nextProps.errors});
         }
