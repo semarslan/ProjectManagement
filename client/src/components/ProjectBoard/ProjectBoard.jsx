@@ -11,8 +11,19 @@ class ProjectBoard extends Component {
         super(props);
 
         this.state = {
+            error: false,
             errors: {}
         }
+    }
+
+    componentWillUnmount() {
+        if (this.state.errors) {
+            this.setState({errors: this.state.errors});
+        }
+    }
+
+    componentDidCatch(error, errorInfo) {
+        this.setState({error, errorInfo})
     }
 
     componentDidMount() {
@@ -20,11 +31,12 @@ class ProjectBoard extends Component {
         this.props.getBacklog(id)
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
-        if (nextProps.errors) {
-            this.setState({errors: nextProps.errors});
-        }
-    }
+    // UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
+    //     if (nextProps.errors) {
+    //         this.setState({errors: nextProps.errors});
+    //     }
+    // }
+
 
     render() {
         const {id} = this.props.match.params;
@@ -41,7 +53,14 @@ class ProjectBoard extends Component {
                             {errors.projectNotFound}
                         </div>
                     );
-                } else {
+                } else if (errors.projectIdentifier) {
+                    return (
+                        <div className="alert alert-danger text-center" role={alert}>
+                            {errors.projectIdentifier}
+                        </div>
+                    );
+                }
+                else {
                     return (
                         <div className="alert alert-info text-center" role={alert}>
                             No Project Tasks on this board
