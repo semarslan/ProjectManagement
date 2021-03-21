@@ -25,26 +25,30 @@
 ```
 
 * http://localhost:8080/api/users/login
+``` 
 {
     "password": "semasema",
     "username": "94.sema.arslan@gmail.com"
 }
-
+``` 
 ## Project Manager
 * Create Project: http://localhost:8080/api/project
+``` 
 {
     "projectName" : "test project",
     "projectIdentifier" : "ID01",
     "description": "test description"
 }
-
+``` 
 * Update Project: http://localhost:8080/api/project
+``` 
 {
     "id" : 1,
     "projectName" : "test project update",
     "projectIdentifier" : "ID01",
     "description": "test description"
 }
+``` 
 
 * Get Project: http://localhost:8080/api/project/ID01
 
@@ -55,16 +59,17 @@
 ## Task Project 
 
 * Create Backlog: http://localhost:8080/api/backlog/ID01
-
+``` 
 {
     "summary" : "Test"
 }
-
+``` 
 * Get Project Task: http://localhost:8080/api/backlog/ID01
 
 * Project Sequence: http://localhost:8080/api/backlog/ID01/ID01-1
 
 * Update Project Task: http://localhost:8080/api/backlog/ID01/ID01-1
+``` 
 {
     "id": 1,
     "projectSequence": "ID01-1",
@@ -77,7 +82,7 @@
     "updatedAt": null,
     "projectIdentifier": "ID01"
 }
-
+``` 
 * Delete Project Task: http://localhost:8080/api/backlog/ID01/ID01-1
 ------------------
 
