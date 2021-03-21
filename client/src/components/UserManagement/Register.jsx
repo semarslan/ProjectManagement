@@ -7,13 +7,20 @@ import classnames from "classnames";
 class Register extends Component {
 
     state = {
-        username : "",
-        fullName :"",
-        password : "",
-        confirmPassword : "",
+        username: "",
+        fullName: "",
+        password: "",
+        confirmPassword: "",
         errors: {}
     }
-       componentWillReceiveProps(nextProps, nextContext) {
+
+    componentDidMount() {
+        if (this.props.security.validToken) {
+            this.props.history.push("/dashboard");
+        }
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
         if (nextProps.errors) {
             this.setState({errors: nextProps.errors})
         }
@@ -22,10 +29,10 @@ class Register extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         const newUser = {
-            username : this.state.username,
-            fullName :this.state.fullName,
-            password : this.state.password,
-            confirmPassword : this.state.confirmPassword,
+            username: this.state.username,
+            fullName: this.state.fullName,
+            password: this.state.password,
+            confirmPassword: this.state.confirmPassword,
         }
 
         this.props.createUser(newUser, this.props.history);
@@ -35,7 +42,7 @@ class Register extends Component {
     }
 
     render() {
-        const {errors,username, fullName, password, confirmPassword} = this.state;
+        const {errors, username, fullName, password, confirmPassword} = this.state;
 
         return (
             <div className="register">
@@ -48,7 +55,7 @@ class Register extends Component {
                                 <div className="form-group">
                                     <input type="text"
                                            className={classnames("form-control form-control-lg", {
-                                               "is-invalid" : errors.fullName
+                                               "is-invalid": errors.fullName
                                            })}
                                            placeholder="Full Name"
                                            name="fullName"
@@ -67,7 +74,7 @@ class Register extends Component {
                                 <div className="form-group">
                                     <input type="text"
                                            className={classnames("form-control form-control-lg", {
-                                               "is-invalid" : errors.username
+                                               "is-invalid": errors.username
                                            })}
                                            placeholder="Email Address (Username)"
                                            name="username"
@@ -85,7 +92,7 @@ class Register extends Component {
                                 <div className="form-group">
                                     <input type="password"
                                            className={classnames("form-control form-control-lg", {
-                                               "is-invalid" : errors.password
+                                               "is-invalid": errors.password
                                            })}
                                            placeholder="Password"
                                            name="password"
@@ -103,7 +110,7 @@ class Register extends Component {
                                 <div className="form-group">
                                     <input type="password"
                                            className={classnames("form-control form-control-lg", {
-                                               "is-invalid" : errors.confirmPassword
+                                               "is-invalid": errors.confirmPassword
                                            })}
                                            placeholder="Confirm Password"
                                            name="confirmPassword"

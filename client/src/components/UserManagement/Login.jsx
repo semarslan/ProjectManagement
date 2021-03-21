@@ -32,6 +32,7 @@ class Login extends Component {
         }
 
     }
+
     onSubmit(e) {
         e.preventDefault();
         const LoginRequest = {
@@ -103,7 +104,7 @@ Login.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    security: state.security,
-    errors: state.errors
+    errors: state.errors,
+    security: state.security
 })
 export default connect(mapStateToProps, {login})(Login);
