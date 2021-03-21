@@ -1,7 +1,16 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
+import {connect} from "react-redux";
+import PropTyes from "prop-types";
+
 
 class Landing extends Component {
+
+    componentDidMount() {
+        if (this.props.security.validToken) {
+            this.props.history.push("/dashboard");
+        }
+    }
     render() {
         return (
 
@@ -30,4 +39,12 @@ class Landing extends Component {
     }
 }
 
-export default Landing;
+Landing.propTypes = {
+    security: PropTyes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+    security: state.security
+})
+
+export default connect(mapStateToProps)(Landing);

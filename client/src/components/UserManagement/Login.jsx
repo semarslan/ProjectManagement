@@ -58,7 +58,9 @@ class Login extends Component {
                                 <div className="form-group">
                                     <input
                                         type="email"
-                                        className="form-control form-control-lg"
+                                        className={classnames("form-control form-control-lg", {
+                                            "is-invalid": errors.username
+                                        })}
                                         placeholder="Email Address"
                                         name="username"
                                         value={this.state.username}
@@ -97,6 +99,7 @@ class Login extends Component {
 Login.propTypes = {
     login: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired,
+    security: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
