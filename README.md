@@ -14,6 +14,7 @@
 
 ## User
 * http://localhost:8080/api/users/register
+``` 
 {
     "username" : "94.sema.arslan@gmail.com",
     "fullName" :"sema arslan",
@@ -21,13 +22,15 @@
     "confirmPassword" : "semasema"
 }
 
+```
+
 * http://localhost:8080/api/users/login
 {
     "password": "semasema",
     "username": "94.sema.arslan@gmail.com"
 }
 
-##Project Manager
+## Project Manager
 * Create Project: http://localhost:8080/api/project
 {
     "projectName" : "test project",
