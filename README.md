@@ -10,7 +10,72 @@
 * React 
 * Redux
 
+#Json
 
+## User
+* http://localhost:8080/api/users/register
+{
+    "username" : "94.sema.arslan@gmail.com",
+    "fullName" :"sema arslan",
+    "password" : "semasema",
+    "confirmPassword" : "semasema"
+}
+
+* http://localhost:8080/api/users/login
+{
+    "password": "semasema",
+    "username": "94.sema.arslan@gmail.com"
+}
+
+##Project Manager
+* Create Project: http://localhost:8080/api/project
+{
+    "projectName" : "test project",
+    "projectIdentifier" : "ID01",
+    "description": "test description"
+}
+
+* Update Project: http://localhost:8080/api/project
+{
+    "id" : 1,
+    "projectName" : "test project update",
+    "projectIdentifier" : "ID01",
+    "description": "test description"
+}
+
+* Get Project: http://localhost:8080/api/project/ID01
+
+* Get All Projects: http://localhost:8080/api/project/all
+
+* Delete Project: http://localhost:8080/api/project/ID01
+
+## Task Project 
+
+* Create Backlog: http://localhost:8080/api/backlog/ID01
+
+{
+    "summary" : "Test"
+}
+
+* Get Project Task: http://localhost:8080/api/backlog/ID01
+
+* Project Sequence: http://localhost:8080/api/backlog/ID01/ID01-1
+
+* Update Project Task: http://localhost:8080/api/backlog/ID01/ID01-1
+{
+    "id": 1,
+    "projectSequence": "ID01-1",
+    "summary": "Update Test",
+    "acceptanceCriteria": null,
+    "status": "TO_DO",
+    "priority": 3,
+    "dueDate": null,
+    "createdAt": "2021-02-02T12:33:23.789+0000",
+    "updatedAt": null,
+    "projectIdentifier": "ID01"
+}
+
+* Delete Project Task: http://localhost:8080/api/backlog/ID01/ID01-1
 ------------------
 
 @ControllerAdvice : Spring MVC uygulamalarında küresel hata işleme için kullanılır. Ayrıca response'un body ve http status kodu üzerinde tam denetime sahiptir.
