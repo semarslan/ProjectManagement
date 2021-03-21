@@ -1,14 +1,14 @@
 # ProjectManagement
 
 
-# Technologies
-Java 8
-Spring Boot
-Spring Security
-Lombok
-PostgreSQL
-React 
-Redux
+# Tech Stack
+* Java 8
+* Spring Boot
+* Spring Security
+* Lombok
+* PostgreSQL
+* React 
+* Redux
 
 
 ------------------
