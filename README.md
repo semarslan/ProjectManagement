@@ -1,7 +1,15 @@
 # ProjectManagement
 
 
-# Not finished yet.
+# Technologies
+Java 8
+Spring Boot
+Spring Security
+Lombok
+PostgreSQL
+React 
+Redux
+
 
 ------------------
 
