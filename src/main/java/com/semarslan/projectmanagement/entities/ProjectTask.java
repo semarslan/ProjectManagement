@@ -1,5 +1,6 @@
 package com.semarslan.projectmanagement.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,10 +34,13 @@ public class ProjectTask {
 
     private Integer priority;
 
+    @JsonFormat(pattern = "yyyy-mm-dd")
     private Date dueDate;
 
+    @JsonFormat(pattern = "yyyy-mm-dd")
     private Date createdAt;
 
+    @JsonFormat(pattern = "yyyy-mm-dd")
     private Date updatedAt;
 
     @Column(updatable = false)
